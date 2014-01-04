@@ -7,7 +7,7 @@
     %link{:href => 'http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope', :rel => 'stylesheet', :type => 'text/css'}
   %body
     %div#content
-      %div.row
+      %div#wordRow
         %div#wordCell
           %div#word
             - @person = @wishes.select { |wish| wish[:name] == params[:name] }
@@ -16,7 +16,7 @@
             %h4 Thanks for putting up with me in 2013 - it was a blast! Wish you and your family a fantastic 2014 and looking forward to see you again soon!
             %h2.cheers Cheers, Pete C
 
-      %div.row
+      %div#peteRow
         %div#peteCell
           %p &nbsp;
           %p &nbsp;

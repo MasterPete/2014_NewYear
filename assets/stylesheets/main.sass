@@ -19,9 +19,9 @@ body
     background: black url('/img/bg.jpg') repeat-x
     background-size: cover
     @include hardware-accel
-    -webkit-animation: loop 60s linear infinite
+    -webkit-animation: loop 120s linear infinite
 
-    .row
+    #wordRow, #peteRow
       display: table-row
 
     #wordCell
@@ -31,7 +31,6 @@ body
         padding: 20px
         border: 2px solid black
         background: rgba(255,255,255,0.9)
-        //float: left
         @include border-radius(20px)
 
         h1, h2, h3, h4
@@ -63,8 +62,6 @@ body
 
 
 
-
-
 @-webkit-keyframes loop
   0%
     background-position: 9999px
@@ -74,8 +71,45 @@ body
 
 //// To Do: Convert this to -ms and stuff
 
-@media(max-width:350px)
-@media(max-width:767px)
+
+
+@media(min-width:580px)
+  body
+    #content, #content .row
+      display: block
+    #content
+      #wordRow, #peteRow
+        height: 100%
+        width: 50%
+        float: right
+      #peteRow
+        position: absolute
+        #peteCell
+          width: 100%
+          display: block
+          font-size: 0
+          #pete
+            width: 130%
+            height: 80%
+            top: auto
+
+
 @media(min-width:768px)
+  body #content #wordRow #wordCell #word
+    padding: 30px
+    h1
+      font-size: 48px
+    h2
+      font-size: 30px
+    h4
+      font-size: 20px
+
 @media(min-width:992px)
+  body #content #peteRow #peteCell #pete
+    height: 95%
+    width: 120%
+
 @media(min-width:1200px)
+  body #content #peteRow #peteCell #pete
+    height: 95%
+    width: 80%
