@@ -1,0 +1,120 @@
+@import "mixin"
+
+html, body
+  height: 100%
+  -webkit-overflow-scroll: touch
+  position: relative
+  padding: 0
+  margin: 0
+
+
+
+body
+  background: black
+  color: white
+  font-family: Helvetica Neue, Helvetica, Arial, san-serif
+  font-weight: 200
+
+  ul
+    width: 100%
+    margin: 0
+    padding: 0
+    list-style: none
+
+    li
+      position: relative
+      font-size: 18px
+      z-index: 2
+      @include hardware-accel
+      background: $grey6
+
+      a
+        color: white
+
+      .offer
+        display: table
+        padding: 15px
+        border: 1px dashed black
+
+
+
+        .left, .right
+          display: table-cell
+          vertical-align: bottom
+        .left
+          width: 100%
+          padding-right: 15px
+        .right
+          text-align: right
+
+
+        .day
+          width: 100%
+          display: block
+          font-size: 26px
+          span
+            background: white
+            color: $grey8
+            display: inline-block
+            font-size: 10px
+            height: 24px
+            padding: 0 5px
+            float: left
+            line-height: 24px
+          .arrow
+            float: left
+            width: 0
+            height: 0
+            @include arrow-right(12px, white)
+
+        .name
+          width: 100%
+          display: block
+          padding: 0
+          margin: 0
+
+        .price
+          .block
+            font-weight: 700
+            font-size: 10px
+            display: block
+            white-space: nowrap
+            span
+              vertical-align: top
+            .sign
+              font-size: 20px
+              line-height: 32px
+            .dollars
+              font-size: 37px
+            .asterisk
+              line-height: 24px
+
+          .method
+            font-size: 10px
+            margin: -4px 10px 3px 0
+
+
+        &.featured
+          background: $blue
+          .day span
+            color: $blue
+
+        &.lastday
+          background: $red
+          .day span
+            color: $red
+
+        &.img
+          background-size: cover
+          background-position: bottom center
+          box-shadow: 0 -80px 35px -20px rgba(0,0,0,0.8) inset
+          .day
+            padding-bottom: 100px
+
+
+
+@media(max-width:350px)
+@media(max-width:767px)
+@media(min-width:768px)
+@media(min-width:992px)
+@media(min-width:1200px)
