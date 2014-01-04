@@ -6,18 +6,18 @@ require 'sass'
 set :haml, format: :html5
 set :bind, '0.0.0.0'
 
-@@offers = [
-{ name: "Traditional Value Range Pizzas", price: "9.99", day: "Today Only", featured: "Featured Offer" },
-{ name: "3 Traditional Pizzas + 2 Garlic Breads + 2 x 1.25L Drinks", price: "9.99", day: "Today Only" },
-{ name: "Value Range Pizzas", price: "11.95", day: "Last Day" },
-{ name: "Traditional Value Range Pizzas", price: "9.99", day: "9 Days Left" }
+@@wishes = [
+{ name: "petec", fullname: "Pete Chemsripong", word: "Happy New Year!!" },
+{ name: "liviu", fullname: "Liviu Constantinescu", word: "Happy New Year!!" }
 ]
 
 
 
-get '/' do
+get '/:name' do
+  @wishes = @@wishes
   haml :index
 end
+
 
 
 get '/stylesheets/*.css' do

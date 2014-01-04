@@ -1,2 +1,12 @@
-%body
-  Hahahahahaha
+!!!
+%html
+  %head
+    %title Dominos
+    %meta{:name => 'viewport', :content => 'width=device-width'}
+    %link{:href => 'stylesheets/main.css', :rel => 'stylesheet', :type => 'text/css'}
+
+  %body
+    - @person = @wishes.select { |wish| wish[:name] == params[:name] }
+
+    Hello #{@person[0][:fullname]}
+    Word #{@person[0][:word]}
