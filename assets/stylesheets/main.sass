@@ -9,10 +9,8 @@ html, body
   font-family: 'Annie Use Your Telescope', cursive
 
 body
-
-  //// To Do: Convert this to -ms and stuff
-
   #content
+    overflow: hidden
     display: table
     width: 100%
     min-height: 100%
@@ -85,6 +83,12 @@ body
         left: 0
         bottom: 0
         right: 0
+        @include hardware-accel
+        animation: jump 3s ease infinite
+        -webkit-animation: jump 3s ease infinite
+        -moz-animation: jump 3s ease infinite
+        -o-animation: jump 3s ease infinite
+        -ms-animation: jump 3s ease infinite
 
 @keyframes loop
   0%
@@ -113,7 +117,72 @@ body
     backround-position: 0
 
 
-//// To Do: Convert this to -ms and stuff
+
+@keyframes jump
+  0%
+    transform: translateY(0)
+  25%
+    transform: translateY(2px)
+  30%
+    transform: translateY(5px)
+  40%
+    transform: translateY(0)
+  50%
+    transform: translateY(5px)
+  100%
+    transform: translateY(0)
+@-webkit-keyframes jump
+  0%
+    -webkit-transform: translateY(0)
+  25%
+    -webkit-transform: translateY(2px)
+  30%
+    -webkit-transform: translateY(5px)
+  40%
+    -webkit-transform: translateY(0)
+  50%
+    -webkit-transform: translateY(5px)
+  100%
+    -webkit-transform: translateY(0)
+@-moz-keyframes jump
+  0%
+    -moz-transform: translateY(0)
+  25%
+    -moz-transform: translateY(2px)
+  30%
+    -moz-transform: translateY(5px)
+  40%
+    -moz-transform: translateY(0)
+  50%
+    -moz-transform: translateY(5px)
+  100%
+    -moz-transform: translateY(0x)
+@-o-keyframes jump
+  0%
+    -o-transform: translateY(0)
+  25%
+    -o-transform: translateY(2px)
+  30%
+    -o-transform: translateY(5px)
+  40%
+    -o-transform: translateY(0)
+  50%
+    -o-transform: translateY(5px)
+  100%
+    -o-transform: translateY(0)
+@-ms-keyframes jump
+  0%
+    -ms-transform: translateY(0)
+  25%
+    -ms-transform: translateY(2px)
+  30%
+    -ms-transform: translateY(5px)
+  40%
+    -ms-transform: translateY(0)
+  50%
+    -ms-transform: translateY(5px)
+  100%
+    -ms-transform: translateY(0)
 
 
 

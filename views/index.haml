@@ -1,7 +1,10 @@
 !!!
 %html
+  - @person = [{fullname: "there"}]
+  - if !params[:name].nil?
+    - @person = @wishes.select { |wish| wish[:name] == params[:name] }
   %head
-    %title Dominos
+    %title Hey Liviu, Happy New Year 2014 from Pete C!
     %meta{:name => 'viewport', :content => 'width=device-width'}
     %link{:href => 'stylesheets/main.css', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => 'http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope', :rel => 'stylesheet', :type => 'text/css'}
@@ -10,10 +13,12 @@
       %div#wordRow
         %div#wordCell
           %div#word
-            - @person = @wishes.select { |wish| wish[:name] == params[:name] }
-            %h2 Hey Liviu, Bog & Family!
+            %h2 Hey #{@person[0][:fullname]}!
             %h1 Happy New Year!
-            %h4 Thanks for putting up with me in 2013 - it was a blast! Wish you and your family a fantastic 2014 and looking forward to see you again soon!
+            - if !@person[0][:word].nil?
+              %h4 #{@person[0][:word]}
+            - else
+              %h4 Thanks for putting up with me in 2013 - it was a blast! Wish you and your family a fantastic 2014 and looking forward to see you again soon!
             %h2.cheers Cheers, Pete C
 
       %div#peteRow
@@ -23,5 +28,5 @@
           %p &nbsp;
           %div#pete
 
-        -#Hello #{@person[0][:fullname]}
-        -#Word #{@person[0][:word]}
+
+
