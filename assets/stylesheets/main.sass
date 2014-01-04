@@ -13,38 +13,56 @@ body
   //// To Do: Convert this to -ms and stuff
 
   #content
+    display: table
     width: 100%
     min-height: 100%
     background: black url('/img/bg.jpg') repeat-x
     background-size: cover
-    padding: 15px
     @include hardware-accel
     -webkit-animation: loop 60s linear infinite
 
+    .row
+      display: table-row
 
-    #word
-      padding: 20px
-      border: 2px solid black
-      background: rgba(255,255,255,0.9)
-      //float: left
-      @include border-radius(20px)
+    #wordCell
+      display: table-cell
+      padding: 15px 15px 0 15px
+      #word
+        padding: 20px
+        border: 2px solid black
+        background: rgba(255,255,255,0.9)
+        //float: left
+        @include border-radius(20px)
 
-      h1, h2, h3, h4
-        margin: 0
-        padding: 0
-      h1
-        font-size: 35px
-        margin-bottom: 20px
-      .cheers
-        text-align: right
+        h1, h2, h3, h4
+          margin: 0
+          padding: 0
+        h1
+          font-size: 35px
+          margin-bottom: 20px
+        .cheers
+          text-align: right
+
+
+    #peteCell
+      display: table-cell
+      width: 100%
+      height: 100%
+
+      min-height: 10%
+      position: relative
+      #pete
+        background: transparent url('/img/pete.png') no-repeat top right
+        background-size: cover
+        width: 50%
+        position: absolute
+        top: -50px
+        left: 0
+        bottom: 0
+        right: 0
 
 
 
-
-
-  #pete
-    background: red url('/img/pete.png') no-repeat
-    float: left
 
 
 @-webkit-keyframes loop
