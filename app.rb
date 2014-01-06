@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 require 'haml'
 require 'sass'
-require 'CSV'
+require 'csv'
 
 set :haml, format: :html5
 set :bind, '0.0.0.0'
