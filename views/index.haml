@@ -1,6 +1,5 @@
 !!!
 %html
-  - @person = [{fullname: "there"}]
   - if !params[:name].nil?
     - @person = @wishes.select { |wish| wish[:url] == params[:name] }
   %head
