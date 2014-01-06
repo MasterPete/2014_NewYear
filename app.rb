@@ -2,15 +2,16 @@ require 'sinatra'
 require 'json'
 require 'haml'
 require 'sass'
+require 'CSV'
 
 set :haml, format: :html5
 set :bind, '0.0.0.0'
 
-@@wishes = [
-{ name: "petec", fullname: "Pete C"},
-{ name: "liviu", fullname: "Liviu, Bog, and family", word: "Thanks for putting up with me in 2013, guys - it was a blast! Wish you and your family a fantastic 2014 and looking forward to see you again soon!" }
-]
+@@wishes = []
 
+CSV.foreach("#{settings.root}/assets/source.csv") do |row|
+	@@wishes << { fullname: row[0], url: row[1], name: row[2], word: row[3]}
+end
 
 get '/' do
   @wishes = @@wishes
